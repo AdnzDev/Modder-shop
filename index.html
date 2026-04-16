@@ -36,6 +36,11 @@
             box-sizing: border-box;
         }
 
+        /* SCROLL SUAVE PARA OS BOTÕES DE NAVEGAÇÃO */
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             background-color: var(--bg-color);
             color: var(--text-primary);
@@ -70,213 +75,191 @@
             overflow: hidden;
         }
 
-        .cover-banner video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            opacity: 0.85; /* Deixa o vídeo levemente escurecido para não cansar a vista */
-        }
+        .cover-banner video { width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.85; }
 
-        /* Botão de Volume Acoplado ao Banner */
         .mute-btn-banner {
-            position: absolute;
-            bottom: 15px;
-            right: 15px;
-            background-color: var(--primary-purple);
-            color: #fff;
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            width: 45px;
-            height: 45px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: var(--transition);
-            z-index: 10;
+            position: absolute; bottom: 15px; right: 15px;
+            background-color: var(--primary-purple); color: #fff;
+            border: 2px solid rgba(255, 255, 255, 0.1); border-radius: 50%;
+            width: 45px; height: 45px; display: flex; align-items: center; justify-content: center;
+            cursor: pointer; transition: var(--transition); z-index: 10;
             box-shadow: 0 4px 10px rgba(0,0,0,0.5);
         }
-
-        .mute-btn-banner:hover {
-            background-color: var(--primary-hover);
-            transform: scale(1.1);
-        }
-
+        .mute-btn-banner:hover { background-color: var(--primary-hover); transform: scale(1.1); }
         .mute-btn-banner svg { width: 20px; height: 20px; fill: currentColor; }
 
         /* ==================== 
            PROFILE HEADER
            ==================== */
         .hero {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding-bottom: 3rem;
-            border-bottom: 1px solid rgba(124, 58, 237, 0.2);
+            display: flex; flex-direction: column; align-items: center; text-align: center;
+            padding-bottom: 3rem; border-bottom: 1px solid rgba(124, 58, 237, 0.2);
         }
 
-        /* Container da Foto de Perfil (Sobrepondo o Banner) */
         .profile-wrapper {
-            position: relative;
-            width: 160px;
-            height: 160px;
-            margin-top: -80px; /* Joga a foto para cima do banner */
-            margin-bottom: 1rem;
-            z-index: 2;
+            position: relative; width: 160px; height: 160px;
+            margin-top: -80px; margin-bottom: 1rem; z-index: 2;
         }
 
         .profile-photo {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            border: 4px solid var(--primary-purple);
-            box-shadow: 0 0 25px rgba(124, 58, 237, 0.4);
-            object-fit: cover;
-            background-color: var(--surface-color);
-            display: block;
+            width: 100%; height: 100%; border-radius: 50%;
+            border: 4px solid var(--primary-purple); box-shadow: 0 0 25px rgba(124, 58, 237, 0.4);
+            object-fit: cover; background-color: var(--surface-color); display: block;
         }
 
-        /* Estilo do Nome e Verificado */
-        .hero-name {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            font-size: 2.2rem;
-            font-weight: 700;
-            margin-bottom: 0.2rem;
-        }
+        .hero-name { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 2.2rem; font-weight: 700; margin-bottom: 0.2rem; }
+        .verified-icon { width: 24px; height: 24px; fill: var(--verified-blue); }
+        .hero-arroba { color: var(--primary-purple); font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem; display: block; }
 
-        .verified-icon {
-            width: 24px;
-            height: 24px;
-            fill: var(--verified-blue);
-        }
-
-        .hero-arroba {
-            color: var(--primary-purple);
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        /* Badge do Cargo (Pílula) */
         .role-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background-color: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--text-secondary);
-            padding: 8px 20px;
-            border-radius: 30px;
-            font-size: 0.9rem;
-            margin-bottom: 2rem;
+            display: inline-flex; align-items: center; gap: 8px;
+            background-color: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary); padding: 8px 20px; border-radius: 30px;
+            font-size: 0.9rem; margin-bottom: 2rem;
         }
-
-        .role-badge svg {
-            width: 18px;
-            height: 18px;
-            fill: currentColor;
-        }
+        .role-badge svg { width: 18px; height: 18px; fill: currentColor; }
 
         .highlights {
-            list-style: none;
-            margin-bottom: 2.5rem;
-            display: inline-block;
-            text-align: left;
-            background-color: var(--surface-color);
-            padding: 1.5rem 2rem;
-            border-radius: var(--border-radius);
-            border-left: 4px solid var(--primary-purple);
+            list-style: none; margin-bottom: 2.5rem; display: inline-block; text-align: left;
+            background-color: var(--surface-color); padding: 1.5rem 2rem;
+            border-radius: var(--border-radius); border-left: 4px solid var(--primary-purple);
         }
-
         .highlights li { margin-bottom: 0.5rem; font-weight: 300; display: flex; align-items: center; gap: 0.5rem; }
 
-        .btn-group {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            width: 100%;
-            max-width: 400px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 1rem 1.5rem;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            text-align: center;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-        }
-
+        .btn-group { display: flex; flex-direction: column; gap: 1rem; width: 100%; max-width: 400px; }
+        .btn { display: inline-block; padding: 1rem 1.5rem; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 1rem; text-align: center; transition: var(--transition); border: none; cursor: pointer; }
         .btn-purple { background-color: var(--primary-purple); color: #fff; }
         .btn-purple:hover { background-color: var(--primary-hover); transform: translateY(-2px); }
-        
         .btn-green { background-color: var(--wpp-green); color: #fff; }
         .btn-green:hover { background-color: var(--wpp-hover); transform: translateY(-2px); }
 
         /* ==================== 
+           MENU DE NAVEGAÇÃO RÁPIDA (ÂNCORAS)
+           ==================== */
+        .category-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 4rem;
+        }
+
+        .category-nav a {
+            background-color: var(--surface-color);
+            border: 2px solid var(--primary-purple);
+            color: var(--text-primary);
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .category-nav a:hover {
+            background-color: var(--primary-purple);
+            color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(124, 58, 237, 0.3);
+        }
+
+        /* ==================== 
            VITRINE DE PRODUTOS
            ==================== */
-        .products h3 { font-size: 2rem; text-align: left; border-left: 4px solid var(--primary-purple); padding-left: 10px; margin-bottom: 2rem; }
-
+        .products h3 { 
+            font-size: 1.8rem; text-align: left; border-left: 4px solid var(--primary-purple); 
+            padding-left: 10px; margin-bottom: 2rem; 
+            /* scroll-margin garante que ao clicar no link, o título não fique grudado no topo da tela */
+            scroll-margin-top: 2rem; 
+        }
+        .section-spacing { margin-top: 4rem; }
         .grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
 
         .card {
-            background-color: var(--surface-color);
-            border: 1px solid rgba(124, 58, 237, 0.3);
-            border-radius: var(--border-radius);
-            padding: 2rem;
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column;
+            background-color: var(--surface-color); border: 1px solid rgba(124, 58, 237, 0.3);
+            border-radius: var(--border-radius); padding: 2rem; transition: var(--transition);
+            display: flex; flex-direction: column;
         }
-
         .card:hover { border-color: var(--primary-purple); transform: translateY(-5px); }
-
         .card h4 { font-size: 1.4rem; margin-bottom: 0.5rem; }
+        
         .badge {
-            display: inline-block;
-            background: rgba(124, 58, 237, 0.1);
-            color: var(--primary-purple);
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
+            display: inline-block; background: rgba(124, 58, 237, 0.1); color: var(--primary-purple);
+            padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin-bottom: 1.5rem;
         }
+        .badge-ps { background: rgba(37, 211, 102, 0.1); color: var(--wpp-green); }
 
-        .card ul { list-style: none; margin-bottom: 2rem; flex-grow: 1; }
+        .card ul { list-style: none; margin-bottom: 1.5rem; flex-grow: 1; }
         .card ul li { font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 0.8rem; }
         .card ul li::before { content: '✓ '; color: var(--primary-purple); font-weight: bold; }
 
-        .price { font-size: 1.8rem; font-weight: 700; color: var(--primary-purple); margin-bottom: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.05); }
-
-        .btn-card {
-            background-color: transparent;
-            border: 2px solid var(--wpp-green);
-            color: var(--wpp-green);
-            font-size: 0.9rem;
-            padding: 0.8rem;
-            text-decoration: none;
-            text-align: center;
-            border-radius: 30px;
-            font-weight: 600;
-            transition: var(--transition);
-        }
-
-        .btn-card:hover { background-color: var(--wpp-green); color: #fff; }
-
         .money-list li { display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 0.5rem; }
         .money-list li::before { content: '' !important; }
+
+        .price-simple { font-size: 1.8rem; font-weight: 700; color: var(--primary-purple); margin-bottom: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.05); }
+
+        .pricing-box {
+            margin-bottom: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.05);
+            display: flex; flex-direction: column; gap: 0.5rem; flex-grow: 0; margin-top: auto;
+        }
+        .price-pix { font-size: 1.5rem; font-weight: 700; color: var(--wpp-green); display: flex; justify-content: space-between; align-items: center; }
+        .price-pix span { font-size: 0.9rem; font-weight: 400; color: var(--text-secondary); }
+        .price-card { font-size: 1.2rem; font-weight: 600; color: var(--primary-purple); display: flex; justify-content: space-between; align-items: center; }
+        .price-card span { font-size: 0.9rem; font-weight: 400; color: var(--text-secondary); }
+
+        .property-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1.5rem; }
+        .property-tags span { background-color: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); color: var(--text-secondary); font-size: 0.8rem; padding: 4px 10px; border-radius: 6px; }
+
+        .btn-card {
+            background-color: transparent; border: 2px solid var(--wpp-green); color: var(--wpp-green);
+            font-size: 0.9rem; padding: 0.8rem; text-decoration: none; text-align: center;
+            border-radius: 30px; font-weight: 600; transition: var(--transition); width: 100%; display: block;
+        }
+        .btn-card:hover { background-color: var(--wpp-green); color: #fff; }
+
+        .btn-info {
+            background-color: transparent; border: 2px solid #5a5d70; color: var(--text-primary);
+            font-size: 0.9rem; padding: 0.8rem; text-decoration: none; text-align: center;
+            border-radius: 30px; font-weight: 600; transition: var(--transition); width: 100%; margin-top: 0.8rem; cursor: pointer;
+        }
+        .btn-info:hover { background-color: #5a5d70; color: #fff; }
+
+        .info-alert {
+            background-color: rgba(124, 58, 237, 0.08); border: 1px solid rgba(124, 58, 237, 0.3);
+            border-left: 4px solid var(--primary-purple); padding: 1.2rem; border-radius: var(--border-radius);
+            margin-top: 2.5rem; font-size: 0.95rem; color: var(--text-secondary);
+        }
+        .info-alert strong { color: var(--text-primary); }
+
+        /* ==================== 
+           MODAL (POP-UP)
+           ==================== */
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); backdrop-filter: blur(5px);
+            z-index: 1000; display: none; align-items: center; justify-content: center;
+            opacity: 0; transition: opacity 0.3s ease;
+        }
+        .modal-overlay.active { display: flex; opacity: 1; }
+        
+        .modal-content {
+            background-color: var(--surface-color); border: 1px solid var(--primary-purple);
+            padding: 2.5rem 2rem; border-radius: var(--border-radius);
+            max-width: 400px; width: 90%; text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5); transform: translateY(-20px); transition: transform 0.3s ease;
+        }
+        .modal-overlay.active .modal-content { transform: translateY(0); }
+
+        .modal-content h4 { color: var(--primary-purple); font-size: 1.5rem; margin-bottom: 1rem; }
+        .modal-content p { color: var(--text-secondary); font-size: 1rem; margin-bottom: 2rem; }
+        .modal-content p strong { color: #fff; font-size: 1.2rem; }
+
+        .btn-close-modal {
+            background-color: var(--primary-purple); color: #fff; border: none;
+            padding: 0.8rem 2rem; border-radius: 30px; font-weight: 600;
+            cursor: pointer; transition: var(--transition); width: 100%; font-size: 1rem;
+        }
+        .btn-close-modal:hover { background-color: var(--primary-hover); transform: translateY(-2px); }
 
         /* ==================== 
            FOOTER
@@ -289,10 +272,11 @@
         @media (min-width: 768px) {
             .btn-group { flex-direction: row; max-width: 600px; justify-content: center; }
             .grid { grid-template-columns: repeat(2, 1fr); }
-            .cover-banner { height: 280px; } /* Banner mais alto no PC */
+            .cover-banner { height: 280px; }
         }
         @media (min-width: 1024px) {
             .grid { grid-template-columns: repeat(3, 1fr); }
+            .card-premium { grid-column: span 2; }
         }
     </style>
 </head>
@@ -300,42 +284,28 @@
 
     <div class="cover-banner">
         <video id="bannerVideo" autoplay loop muted playsinline>
-            <source src="gtav.mp4" type="video/mp4">
-            Seu navegador não suporta vídeos.
+            <source src="SEU_VIDEO_BANNER.mp4" type="video/mp4">
         </video>
-
         <button id="toggleSoundBtn" class="mute-btn-banner" title="Ativar Som">
-            <svg id="iconMuted" viewBox="0 0 24 24">
-                <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
-            </svg>
-            <svg id="iconUnmuted" viewBox="0 0 24 24" style="display: none;">
-                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
-            </svg>
+            <svg id="iconMuted" viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+            <svg id="iconUnmuted" viewBox="0 0 24 24" style="display: none;"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
         </button>
     </div>
 
     <header class="hero container">
-        
         <div class="profile-wrapper">
-            <img src="https://ui-avatars.com/api/?name=Alex+Gamer&background=7c3aed&color=fff&size=200&bold=true" alt="Alexander 
-au" class="profile-photo">
+            <img src="https://ui-avatars.com/api/?name=Alex+Gamer&background=7c3aed&color=fff&size=200&bold=true" alt="Alexander V Calhau" class="profile-photo">
         </div>
 
         <h1 class="hero-name">
-            Alex gamer
-            <svg class="verified-icon" viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="12" />
-                <path fill="#fff" d="M10.2 16.2l-3.5-3.5 1.4-1.4 2.1 2.1 5.8-5.8 1.4 1.4z" />
-            </svg>
+            Alexander V Calhau
+            <svg class="verified-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" /><path fill="#fff" d="M10.2 16.2l-3.5-3.5 1.4-1.4 2.1 2.1 5.8-5.8 1.4 1.4z" /></svg>
         </h1>
-        
         <span class="hero-arroba">(@alex_gamerrj)</span>
 
         <div class="role-badge">
-            <svg viewBox="0 0 24 24">
-                <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V6h16v12zm-8-2h6v-2h-6v2zm-2.5-1c1.38 0 2.5-1.12 2.5-2.5S10.88 10 9.5 10 7 11.12 7 12.5s1.12 2.5 2.5 2.5zm0-4c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5.67-1.5 1.5-1.5z"/>
-            </svg>
-            Modder de GTA 5
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V6h16v12zm-8-2h6v-2h-6v2zm-2.5-1c1.38 0 2.5-1.12 2.5-2.5S10.88 10 9.5 10 7 11.12 7 12.5s1.12 2.5 2.5 2.5zm0-4c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5.67-1.5 1.5-1.5z"/></svg>
+            Influencer Digital e Modder de GTA 5
         </div>
 
         <ul class="highlights">
@@ -351,8 +321,14 @@ au" class="profile-photo">
     </header>
 
     <section class="products container">
-        <h3>Nossos Pacotes</h3> 
+
+        <div class="category-nav">
+            <a href="#secao-pc">💻 PC (Contas Prontas)</a>
+            <a href="#secao-up">⬆️ UP (PS4/PS5/Xbox)</a>
+            <a href="#secao-pacotes">🎮 Pacotes (PS4/PS5/Xbox)</a>
+        </div>
         
+        <h3 id="secao-pc">Pacotes PC (Contas Prontas)</h3> 
         <div class="grid">
             <div class="card">
                 <h4>Conta Modded</h4>
@@ -364,8 +340,8 @@ au" class="profile-photo">
                     <li>Estatísticas full</li>
                     <li>50 milhões em dinheiro</li>
                 </ul>
-                <div class="price">R$ 80,00</div>
-                <a href="https://wa.me/5521982895369?text=Olá%20Alex!%20Gostaria%20de%20comprar%20o%20pacote%20de%20Conta%20Modded%20(R$80)%20que%20vi%20no%20site." class="btn btn-card" target="_blank">Comprar via WhatsApp</a>
+                <div class="price-simple">R$ 80,00</div>
+                <a href="https://wa.me/5521982895369?text=Olá%20Alex!%20Gostaria%20de%20comprar%20o%20pacote%20de%20Conta%20Modded%20PC%20(R$80)." class="btn btn-card" target="_blank">Comprar via WhatsApp</a>
             </div>
 
             <div class="card">
@@ -378,21 +354,111 @@ au" class="profile-photo">
                     <li>Estatísticas full</li>
                     <li>100 milhões em dinheiro</li>
                 </ul>
-                <div class="price">R$ 100,00</div>
-                <a href="https://wa.me/5521982895369?text=Olá%20Alex!%20Gostaria%20de%20comprar%20o%20pacote%20de%20Conta%20Modded%20Pro%20(R$100)%20que%20vi%20no%20site." class="btn btn-card" target="_blank">Comprar via WhatsApp</a>
+                <div class="price-simple">R$ 100,00</div>
+                <a href="https://wa.me/5521982895369?text=Olá%20Alex!%20Gostaria%20de%20comprar%20o%20pacote%20Conta%20Modded%20Pro%20PC%20(R$100)." class="btn btn-card" target="_blank">Comprar via WhatsApp</a>
+            </div>
+        </div>
+
+        <h3 id="secao-up" class="section-spacing">Melhorias na Sua Conta (UP PS4, PS5 e Xbox Series)</h3> 
+        <div class="grid">
+            <div class="card">
+                <h4>UP de Level</h4>
+                <span class="badge badge-ps">UP PS4 / PS5 / Xbox Series</span>
+                <ul class="money-list" style="margin-bottom: auto;">
+                    <li>Level até 70: <span>R$ 40,00</span></li>
+                    <li>Level até 120: <span>R$ 70,00</span></li>
+                    <li>Level até 150: <span>R$ 100,00</span></li>
+                </ul>
+                <div class="price-simple" style="font-size: 1.2rem; border-top: none;">Escolha seu Level</div>
+                <a href="https://wa.me/5521982895369?text=Olá%20Alex!%20Tenho%20interesse%20no%20serviço%20de%20UP%20de%20Level%20(Console)." class="btn btn-card" target="_blank">Comprar via WhatsApp</a>
             </div>
 
             <div class="card">
-                <h4>Apenas Dinheiro</h4>
-                <span class="badge">Pacotes Promocionais</span>
-                <ul class="money-list">
-                    <li>25 milhões: <span>R$ 40,00</span></li>
-                    <li>50 milhões: <span>R$ 60,00</span></li>
-                    <li>100 milhões: <span>R$ 70,00</span></li>
+                <h4>UP de Dinheiro</h4>
+                <span class="badge badge-ps">UP PS4 / PS5 / Xbox Series</span>
+                <ul class="money-list" style="margin-bottom: auto;">
+                    <li>25 milhões: <span>R$ 80,00</span></li>
+                    <li>30 milhões: <span>R$ 100,00</span></li>
+                    <li>50 milhões: <span>R$ 130,00</span></li>
+                    <li>100 milhões: <span>R$ 230,00</span></li>
                 </ul>
-                <div class="price" style="font-size: 1.2rem;">Escolha seu valor</div>
-                <a href="https://wa.me/5521982895369?text=Olá%20Alex!%20Tenho%20interesse%20nos%20pacotes%20de%20Dinheiro%20do%20GTA%20Online." class="btn btn-card" target="_blank">Comprar via WhatsApp</a>
+                <div class="price-simple" style="font-size: 1.2rem; border-top: none;">Escolha o Valor</div>
+                <a href="https://wa.me/5521982895369?text=Olá%20Alex!%20Tenho%20interesse%20no%20serviço%20de%20UP%20de%20Dinheiro%20(Console)." class="btn btn-card" target="_blank">Comprar via WhatsApp</a>
+                
+                <button class="btn-info" onclick="openModal()">Informação Importante</button>
             </div>
+        </div>
+
+        <h3 id="secao-pacotes" class="section-spacing">Pacotes Console (PS4, PS5 e Xbox Series)</h3> 
+        <div class="grid">
+            <div class="card">
+                <h4>Pacote Essencial</h4>
+                <span class="badge badge-ps">PS4 / PS5 / Xbox Series</span>
+                <ul><li>Até Level 70</li><li>25 Milhões no Banco</li><li>5 MK2 para vender (19M)</li><li>6 Apartamentos</li></ul>
+                <div class="pricing-box">
+                    <div class="price-pix"><span>Pix:</span> R$ 100,00</div>
+                    <div class="price-card"><span>Cartão:</span> R$ 115,00</div>
+                </div>
+                <a href="https://wa.me/5521982895369?text=Olá%20Alex!%20Gostaria%20do%20Pacote%20Essencial%20Console." class="btn btn-card" target="_blank">Comprar via WhatsApp</a>
+            </div>
+
+            <div class="card">
+                <h4>Pacote Plus</h4>
+                <span class="badge badge-ps">PS4 / PS5 / Xbox Series</span>
+                <ul><li>Até Level 70</li><li>30 Milhões no Banco</li><li>10 MK2 para vender (38M)</li><li>6 Apartamentos</li></ul>
+                <div class="pricing-box">
+                    <div class="price-pix"><span>Pix:</span> R$ 120,00</div>
+                    <div class="price-card"><span>Cartão:</span> R$ 135,00</div>
+                </div>
+                <a href="https://wa.me/5521982895369?text=Olá%20Alex!%20Gostaria%20do%20Pacote%20Plus%20Console." class="btn btn-card" target="_blank">Comprar via WhatsApp</a>
+            </div>
+
+            <div class="card">
+                <h4>Pacote Extra</h4>
+                <span class="badge badge-ps">PS4 / PS5 / Xbox Series</span>
+                <ul><li>Até Level 70</li><li>50 Milhões no Banco</li><li>15 MK2 para vender (57M)</li><li>6 Apartamentos</li></ul>
+                <div class="pricing-box">
+                    <div class="price-pix"><span>Pix:</span> R$ 150,00</div>
+                    <div class="price-card"><span>Cartão:</span> R$ 165,00</div>
+                </div>
+                <a href="https://wa.me/5521982895369?text=Olá%20Alex!%20Gostaria%20do%20Pacote%20Extra%20Console." class="btn btn-card" target="_blank">Comprar via WhatsApp</a>
+            </div>
+
+            <div class="card">
+                <h4>Pacote Supremo</h4>
+                <span class="badge badge-ps">PS4 / PS5 / Xbox Series</span>
+                <ul><li>Até Level 120</li><li>50 Milhões no Banco</li><li>25 MK2 para vender (95M)</li><li>6 Apartamentos</li></ul>
+                <div class="pricing-box">
+                    <div class="price-pix"><span>Pix:</span> R$ 170,00</div>
+                    <div class="price-card"><span>Cartão:</span> R$ 180,00</div>
+                </div>
+                <a href="https://wa.me/5521982895369?text=Olá%20Alex!%20Gostaria%20do%20Pacote%20Supremo%20Console." class="btn btn-card" target="_blank">Comprar via WhatsApp</a>
+            </div>
+
+            <div class="card card-premium" style="border-color: var(--primary-purple);">
+                <h4>Pacote Premium 👑</h4>
+                <span class="badge badge-ps">PS4 / PS5 / Xbox Series</span>
+                
+                <ul style="margin-bottom: 1rem;">
+                    <li>Até Level 120</li><li>100 Milhões no Banco</li><li>50 MK2 para vender (190M)</li><li>10 Apartamentos</li>
+                </ul>
+
+                <div class="property-tags">
+                    <span>1 Mansão</span><span>Agência</span><span>Maze Bank</span><span>Penthouse</span><span>Motoclube</span>
+                    <span>Ferro Velho</span><span>Arena</span><span>Complexo</span><span>Bunker</span><span>Hangar</span>
+                    <span>Boate</span><span>Iate</span><span>Kosatka</span><span>Centro de Op.</span><span>Terrorbyte</span>
+                </div>
+
+                <div class="pricing-box">
+                    <div class="price-pix"><span>Pix:</span> R$ 250,00</div>
+                    <div class="price-card"><span>Cartão:</span> R$ 270,00</div>
+                </div>
+                <a href="https://wa.me/5521982895369?text=Olá%20Alex!%20Gostaria%20do%20Pacote%20Premium%20Console." class="btn btn-card" style="background-color: var(--wpp-green); color: #fff;" target="_blank">Comprar Premium via WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="info-alert">
+            🏍️ <div><strong>OPRESSOR MK2:</strong> É uma moto voadora que vale 3.8 milhões no jogo. Atenção: Você só pode vender <strong>apenas uma a cada 24 horas</strong> reais.</div>
         </div>
     </section>
 
@@ -402,18 +468,25 @@ au" class="profile-photo">
         </div>
     </footer>
 
+    <div id="infoModal" class="modal-overlay">
+        <div class="modal-content">
+            <h4>Aviso de Segurança</h4>
+            <p>Para realizar o serviço de UP na sua conta, é obrigatório ter pelo menos <strong>1 Milhão</strong> no banco (Conta do jogo).</p>
+            <button class="btn-close-modal" onclick="closeModal()">Entendido</button>
+        </div>
+    </div>
+
     <script>
+        // --- Controle de Som do Banner ---
         const video = document.getElementById('bannerVideo');
         const toggleSoundBtn = document.getElementById('toggleSoundBtn');
         const iconMuted = document.getElementById('iconMuted');
         const iconUnmuted = document.getElementById('iconUnmuted');
 
-        // Garante que o vídeo do banner comece mutado para tocar automaticamente
         video.muted = true;
 
         toggleSoundBtn.addEventListener('click', () => {
             video.muted = !video.muted;
-            
             if (video.muted) {
                 iconMuted.style.display = 'block';
                 iconUnmuted.style.display = 'none';
@@ -422,6 +495,24 @@ au" class="profile-photo">
                 iconMuted.style.display = 'none';
                 iconUnmuted.style.display = 'block';
                 toggleSoundBtn.title = "Mutar Som";
+            }
+        });
+
+        // --- Controle do Pop-up (Modal) ---
+        const modal = document.getElementById('infoModal');
+
+        function openModal() {
+            modal.classList.add('active');
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+        }
+
+        // Fechar o modal ao clicar fora da caixinha
+        modal.addEventListener('click', (e) => {
+            if(e.target === modal) {
+                closeModal();
             }
         });
     </script>
